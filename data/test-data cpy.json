@@ -1,0 +1,32 @@
+{
+    "test_cases": [
+        {
+            "id": "TC001",
+            "name": "UAE Leadership",
+            "queries": {
+                "en": {
+                    "input": "Who is the Prime Minister of UAE?",
+                    "expected_contains": ["Mohammed bin Rashid Al Maktoum", "Dubai", "Prime Minister"],
+                    "validation": {
+                        "min_length": 50,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["Prime Minister", "UAE", "Maktoum"]
+                    }
+                },
+                "ar": {
+                    "input": "من هو رئيس وزراء الإمارات العربية المتحدة؟",
+                    "expected_contains": ["محمد بن راشد آل مكتوم", "دبي", "نائب الرئيس"],
+                    "validation": {
+                        "min_length": 50,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["رئيس الوزراء", "الإمارات", "محمد"]
+                    }
+                }
+            }
+        }      
+        
+        
+    ]
+} 

@@ -1,0 +1,34 @@
+# Core Testing Framework
+pytest>=7.4.4,<8.0.0
+pytest-playwright>=0.5.2,<1.0.0
+pytest-html>=4.1.1,<5.0.0
+pytest-timeout>=2.3.1,<3.0.0
+pytest-rerunfailures>=15.0,<16.0.0
+pytest-xdist>=3.6.1,<4.0.0
+
+# Browser Automation
+playwright>=1.42.0,<2.0.0
+
+# API and HTTP
+requests>=2.31.0,<3.0.0
+
+# Logging and Utilities
+loguru>=0.7.2,<1.0.0
+python-dotenv>=1.0.1,<2.0.0
+
+# Type Checking
+typing-extensions>=4.9.0,<5.0.0
+
+# Development Tools
+pytest-cov>=4.1.0,<5.0.0
+pytest-mock>=3.12.0,<4.0.0
+pytest-env>=1.1.3,<2.0.0
+
+# Test Reporting and Formatting
+pytest-sugar>=1.0.0,<2.0.0
+pytest-metadata>=2.0.4,<3.0.0
+pytest-base-url>=2.1.0,<3.0.0
+
+# Optional Frontend Dependencies (uncomment if needed)
+# axios>=1.6.7,<2.0.0
+# react>=18.2.0,<19.0.0

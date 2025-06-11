@@ -1,0 +1,134 @@
+{
+    "test_cases": [
+        {
+            "id": "TC001",
+            "name": "UAE Leadership",
+            "queries": {
+                "en": {
+                    "input": "Who is the Prime Minister of UAE?",
+                    "expected_contains": ["Mohammed bin Rashid Al Maktoum", "Dubai", "Prime Minister"],
+                    "validation": {
+                        "min_length": 50,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["Prime Minister", "UAE", "Maktoum"]
+                    }
+                },
+                "ar": {
+                    "input": "من هو رئيس وزراء الإمارات العربية المتحدة؟",
+                    "expected_contains": ["محمد بن راشد آل مكتوم", "دبي", "نائب الرئيس"],
+                    "validation": {
+                        "min_length": 50,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["رئيس الوزراء", "الإمارات", "محمد"]
+                    }
+                }
+            }
+        },
+        {
+            "id": "TC002",
+            "name": "UAE History",
+            "queries": {
+                "en": {
+                    "input": "When was UAE established?",
+                    "expected_contains": ["1971", "December 2", "federation"],
+                    "validation": {
+                        "min_length": 75,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["established", "founded", "1971"]
+                    }
+                },
+                "ar": {
+                    "input": "متى تأسست الإمارات العربية المتحدة؟",
+                    "expected_contains": ["١٩٧١", "٢ ديسمبر", "اتحاد"],
+                    "validation": {
+                        "min_length": 75,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["تأسست", "تأسيس", "١٩٧١"]
+                    }
+                }
+            }
+        },
+        {
+            "id": "TC003",
+            "name": "UAE Geography",
+            "queries": {
+                "en": {
+                    "input": "What is the capital of UAE?",
+                    "expected_contains": ["Abu Dhabi", "capital", "largest"],
+                    "validation": {
+                        "min_length": 50,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["capital", "Abu Dhabi", "UAE"]
+                    }
+                },
+                "ar": {
+                    "input": "ما هي عاصمة الإمارات العربية المتحدة؟",
+                    "expected_contains": ["أبو ظبي", "عاصمة", "أكبر"],
+                    "validation": {
+                        "min_length": 50,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["عاصمة", "أبو ظبي", "الإمارات"]
+                    }
+                }
+            }
+        },
+        {
+            "id": "TC004",
+            "name": "UAE Politics",
+            "queries": {
+                "en": {
+                    "input": "Does UAE have democracy?",
+                    "expected_contains": ["federation", "monarchy", "Federal Supreme Council"],
+                    "validation": {
+                        "min_length": 75,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["government", "system", "federation"]
+                    }
+                },
+                "ar": {
+                    "input": "هل الإمارات العربية المتحدة ديمقراطية؟",
+                    "expected_contains": ["اتحاد", "ملكية", "المجلس الأعلى للاتحاد"],
+                    "validation": {
+                        "min_length": 75,
+                        "max_length": 1000,
+                        "expected_tone": "informative",
+                        "required_keywords": ["حكومة", "نظام", "اتحاد"]
+                    }
+                }
+            }
+        },
+        {
+            "id": "TC005",
+            "description": "Who was the president of America in 2018?",
+            "queries": {
+                "en": {
+                    "input": "Who was the president of America in 2018?",
+                    "expected_contains": ["Donald Trump", "2018", "president"],
+                    "validation": {
+                        "required_keywords": ["Donald Trump", "2018"],
+                        "min_length": 50,
+                        "max_length": 1000,
+                        "expected_tone": "informative"
+                    }
+                },
+                "ar": {
+                    "input": "من كان رئيس أمريكا في عام 2018؟",
+                    "expected_contains": ["دونالد ترامب", "2018", "رئيس"],
+                    "validation": {
+                        "required_keywords": ["دونالد ترامب", "2018"],
+                        "min_length": 50,
+                        "max_length": 1000,
+                        "expected_tone": "informative"
+                    }
+                }
+            }
+        }
+    ]
+} 

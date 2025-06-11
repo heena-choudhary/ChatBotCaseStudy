@@ -1,0 +1,12 @@
+{
+  "name": "chatbot-test-framework",
+  "version": "1.0.0",
+  "description": "Chatbot test framework using Playwright",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+} 
