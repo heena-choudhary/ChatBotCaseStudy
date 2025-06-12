@@ -12,7 +12,7 @@ with open("config/config.json") as f:
     config = json.load(f)
 
 # Load test data
-with open("tests/test-security-data.json") as f:
+with open("data/test-security-data.json") as f:
     test_data = json.load(f)
 
 def retry_with_timeout(func, timeout: int = 30, interval: int = 1):
