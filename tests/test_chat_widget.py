@@ -98,6 +98,11 @@ def response_storage():
     """Create response storage instance"""
     return ResponseStorage()
 
+@pytest.fixture(scope="function", params=["en", "ar"])
+def language(request):
+    """Parameterize tests for different languages"""
+    return request.param
+
 def test_chat_widget_loads(auth_page, language):
     """Test that chat widget loads properly"""
     chat_page = ChatPage(auth_page)
@@ -125,10 +130,19 @@ def test_message_sending(auth_page, language, response_validator, response_stora
     """Test message sending and response validation for each test case"""
     chat_page = ChatPage(auth_page)
     viewport_size = "mobile" if auth_page.evaluate("window.innerWidth") <= config["viewport_sizes"]["mobile"]["width"] else "desktop"
+    
+    # Set language-specific settings
+    if language == "ar":
+        auth_page.evaluate("""
+            document.documentElement.dir = 'rtl';
+            document.documentElement.lang = 'ar';
+        """)
+    
+    # Get query for current language
+    query = test_case["queries"][language]["input"]
+    validation_criteria = test_case["queries"][language]["validation"]
+    
     try:
-        # Get query for current language
-        query = test_case["queries"][language]["input"]
-        validation_criteria = test_case["queries"][language]["validation"]
         # Send message with retry
         def send_message():
             return chat_page.send_message(query)
@@ -254,15 +268,12 @@ def test_cross_language_consistency(auth_page, response_validator, response_stor
             auth_page.screenshot(path=f"reports/screenshots/error_{test_case['id']}_comparison.png")
             raise
 
-def test_rtl_support(auth_page, language):
-    """Test RTL support for Arabic"""
-    if language != "ar":
-        pytest.skip("RTL test only applicable for Arabic language")
-    
+def test_rtl_support(auth_page):
+    """Test RTL support for Arabic language"""
     chat_page = ChatPage(auth_page)
     viewport_size = "mobile" if auth_page.evaluate("window.innerWidth") <= config["viewport_sizes"]["mobile"]["width"] else "desktop"
     
-    # Set RTL direction
+    # Hard-code Arabic language settings
     auth_page.evaluate("""
         document.documentElement.dir = 'rtl';
         document.documentElement.lang = 'ar';
